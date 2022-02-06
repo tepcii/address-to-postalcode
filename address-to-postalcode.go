@@ -1,4 +1,4 @@
-package addressToPostalCode
+package addrtopos
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
     "encoding/json"
 )
 
-func to(addr string) string {
+func To(addr string) string {
 	req, err := http.NewRequest(http.MethodGet, "https://zipcoda.net/api?address=" + url.QueryEscape(addr), nil)
     if err != nil {
         log.Fatal(err)
