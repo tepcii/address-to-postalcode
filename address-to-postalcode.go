@@ -28,18 +28,23 @@ func To(addr string) string {
     err != nil {
 		log.Fatal(err)
 	}
-    return stcData.items[0].zipcode
+
+    if len(stcData.Items) > 0 {
+        return stcData.Items[0].Zipcode
+    } else {
+        return "0000000"
+    }
 }
 
 type Response struct {
-	status int
-	length int
-    items []ResponseItem
+	Status int
+	Length int
+    Items []ResponseItem
 }
 
 type ResponseItem struct {
-    zipcode string
-    pref string
-    components []string
-    address string
+    Zipcode string
+    Pref string
+    Components []string
+    Address string
 }
