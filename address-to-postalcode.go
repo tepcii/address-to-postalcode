@@ -7,10 +7,11 @@ import (
     "net/http"
 	"net/url"
     "encoding/json"
+    "strings"
 )
 
 func To(addr string) string {
-	req, err := http.NewRequest(http.MethodGet, "https://zipcoda.net/api?address=" + url.QueryEscape(addr), nil)
+	req, err := http.NewRequest(http.MethodGet, "https://zipcoda.net/api?address=" + url.QueryEscape(strings.Replace(addr, "大字", "", -1)), nil)
     if err != nil {
         log.Fatal(err)
     }
