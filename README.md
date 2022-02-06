@@ -5,7 +5,7 @@ package main
 
 import (
   "fmt"
-	"github.com/tepcii/address-to-postalcode"
+  "github.com/tepcii/address-to-postalcode"
 )
 
 func main() {
